@@ -1,0 +1,61 @@
+<configuration scan="true" scanPeriod="30 seconds">
+    <jmxConfigurator/>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/var/log/containers/channel-service.log</File>
+        <Append>false</Append>
+        <!--    <ImmediateFlush>true</ImmediateFlush>-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>/var/log/containers/archive-channel-service.%i.log.zip</FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>
+
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>CHANNEL-SERVICE-[%d{yyyy.MM.dd HH:mm:ss.SSS z}] [%-5level] [%lo{1}] [%thread] [%method] [%msg]%n</Pattern>
+        </layout>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>CHANNEL-SERVICE-[%d{yyyy.MM.dd HH:mm:ss.SSS z}] [%-5level] [%lo{36}] [%thread] [%method] [%msg]%n</Pattern>
+        </layout>
+    </appender>
+
+    <logger name="com.ihg">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="com.ihg.crm.offline">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="com.ihg.enterprise">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="com.ibm.mq">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="org.apache">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="org.springframework">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="console">
+        <level value="INFO"/>
+    </logger>
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
