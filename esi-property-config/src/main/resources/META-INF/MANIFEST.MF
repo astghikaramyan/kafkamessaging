@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-Description: Contains enterprise-wide reusable code
+Bundle-SymbolicName: esi-property-config
+Built-By: esi_jenkins_slave
+Bnd-LastModified: 1569870777524
+Bundle-ManifestVersion: 2
+Import-Package: org.springframework.web.client,org.springframework.htt
+ p,org.springframework.core.io.support,org.springframework.core.io,org
+ .springframework.context,org.springframework.beans.factory.config,org
+ .slf4j;version="[1.6,2)",org.apache.camel.spring.spi;version="[2.15,3
+ )",org.apache.commons.lang3;version="[3.3,4)",javax.annotation,org.sp
+ ringframework.beans.factory.annotation,org.springframework.stereotype
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-3.2.0.201605172007
+Export-Package: com.xyz.enterprise.common.scc;uses:="org.apache.camel.
+ spring.spi,org.springframework.beans.factory.config,org.springframewo
+ rk.context,org.springframework.core.io";version="1.0.45",com.xyz.ente
+ rprise.common.spring.profile;uses:="javax.annotation,org.springframew
+ ork.stereotype";version="1.0.45"
+Bundle-Name: ESI Spring Config Module
+Bundle-Version: 1.0.45
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.8.0_92
+

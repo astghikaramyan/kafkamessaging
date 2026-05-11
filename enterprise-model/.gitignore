@@ -1,0 +1,11 @@
+.idea
+target
+*.iml
+nb-configuration.xml
+vf.gf.dmn*
+.project
+.classpath
+test-output
+*.swp
+*.log
+.java-version

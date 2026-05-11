@@ -1,0 +1,1 @@
+The Enterprise Model contains model for communicating with grs services.
